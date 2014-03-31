@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+
+	
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <script type="text/javascript" src="js/jquery.signalR-1.1.3.js"></script>    
+    <script type="text/javascript" src="../signalr/hubs"></script>
+
+    <script>
+
+        $(function () {
+			console.log('asdasd');
+            
+            $("#btn1").on('click', function () {
+                //var hub = $.connection.diplomacyHub;
+                
+                //$.connection.diplomacyHub.client.onconnected = function () {};
+                
+                $.connection.hub.start().done(function () {
+                    console.log('asdasd');
+                    //$.connection.diplomacyHub.server.newGame();
+                });
+            });
+            
+        });
+
+    </script>
+</head>
+<body>
+    <button id="btn1">Connect</button>
+</body>
+</html>

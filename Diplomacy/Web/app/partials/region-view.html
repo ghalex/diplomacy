@@ -1,0 +1,28 @@
+<div class="cp-tab region-view" ng-controller="RegionCtrl">
+    
+    <div class="tab-btns">
+        <div class="tab-economy selected"></div>
+        <div class="tab-diplomacy"></div>
+        <div class="tab-research"></div>
+        <div class="tab-army"></div>
+    </div>
+    <div class="tab-content">
+        <div class="selected" ng-include src="'app/partials/region-info-view.html'"></div>
+        <div class="cp-panel">
+            <div class="header">
+                <h1>Diplomacy</h1>
+            </div>
+        </div>
+        <div class="cp-panel">
+            <div class="header">
+                <h1>Research</h1>
+            </div>
+        </div>
+        <div class="cp-panel">
+            <div class="header">
+                <h1>Army</h1>
+            </div>
+        </div>
+    </div>
+    
+</div>

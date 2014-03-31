@@ -1,0 +1,39 @@
+.drop-shadow(@x: 0, @y: 0, @blur: 1px, @color: #000)
+{
+	box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+}
+
+.border-radius (@radius: 5px )
+{
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+}
+
+.inline-block()
+{
+    display: block;
+    min-height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    margin: 0px;
+}
+
+.show-border
+{    
+    [class*="span"]
+    {
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid;
+        min-height: 30px;
+    }
+}
+
+.hide { display: none; }
+
+.h20-spacer { height: 20px; }
+.h40-spacer { height: 40px; }

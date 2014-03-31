@@ -1,0 +1,22 @@
+<div class="lobby-view" ng-controller="GameLobbyCtrl">	
+	<div>
+		<button ng-disabled="hub.isConnected" ng-click="hub.connect()">Connect</button>
+		<button ng-disabled="!hub.isConnected" ng-click="hub.disconnect()">Disconnect</button>        
+	</div>
+	<div>
+		<button ng-disabled="!hub.isConnected" ng-click="hub.newGame()">New Game</button>
+        <button ng-disabled="!joinedGame" ng-click="hub.server().test(joinedGame.Id)">Test</button>
+	</div>
+	<div>
+		<div ng-repeat="game in games">
+			<span>{{game.Id}}</span>
+			<button ng-disabled="joinedGame" ng-click="hub.joinGame(game.Id)">Join</button>
+			<button ng-disabled="!(joinedGame.Id==game.Id)" ng-click="hub.leaveGame(game.Id)">Leave</button>
+			
+			<button ng-disabled="game.IsRunning" ng-click="hub.runGame(game.Id)">Run</button>
+			<button ng-disabled="!game.IsRunning" ng-click="hub.stopGame(game.Id)">Stop</button>
+			
+			<button ng-click="hub.deleteGame(game.Id)">Delete</button>
+		</div>
+	</div>
+</div>

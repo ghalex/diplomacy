@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="diplomacy">
+<head>
+    <title></title>
+    
+    <!-- Less & Css -->    
+	<link rel="stylesheet/less" type="text/css" href="less/index.less">
+	
+	
+	<style>
+	
+		#map
+		{
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+		}
+
+	</style>
+	
+	<!-- Shapes -->
+	<!--<script id="world" src="shapes/world_small.js"></script>-->
+	<!--<script id="france" src="shapes/france.js"></script>-->
+    <!--<script id="germany" src="shapes/germany.js"></script>-->
+	
+	<!-- Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+	
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <script type="text/javascript" src="js/jquery-plugins.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/modules/angular-keypress.js"></script>
+    <script type="text/javascript" src="js/modules/angular-event.js"></script>    
+    <script type="text/javascript" src="js/jquery.signalR-1.1.3.js"></script>    
+    <script type="text/javascript" src="js/less-1.3.0.min.js"></script> 
+    <script type="text/javascript" src="../signalr/hubs"></script>
+	
+	<!-- App -->
+    <script type="text/javascript" src="js/diplomacy-0.0.1.js"></script>
+
+    <script>
+
+        $(function () {
+			$(".cp-tab").tab();
+        });
+
+    </script>
+</head>
+<body>
+	
+	<div ng-include src="'app/views/map-view.html'"></div>    
+    
+	<div class="top-bar">
+		<div></div>		
+		<div class="cp-header green">
+			<div></div>
+			<div class="big"><span> Romania </span></div>
+			<div></div>
+		</div>
+		<div class="flag"></div>
+		<div class="top-bar-body">
+			
+		</div>
+		<div></div>
+	</div>
+	
+    <div class="cp-tab" 
+         ng-controller="RegionTabCtrl" 
+         ng-show="show" 
+         ng-animate="{show: 'anim-show', hide: 'anim-hide'}">
+        
+        <div class="tab-btn">
+            <div class="tab-economy selected"></div>
+            <div class="tab-diplomacy"></div>
+            <div class="tab-research"></div>
+            <div class="tab-army"></div>
+        </div>
+        <div class="tab-content">
+            <div class="selected" ng-include src="'app/views/economy-view.html'"></div>
+            <div class="cp-panel">
+                <div class="header">
+                    <h1>Diplomacy</h1>
+                </div>
+            </div>
+            <div class="cp-panel">
+                <div class="header">
+                    <h1>Research</h1>
+                </div>
+            </div>
+            <div class="cp-panel">
+                <div class="header">
+                    <h1>Army</h1>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+ 
+    <div class="ui">
+        <div ng-include src="'app/views/lobby-view.html'"></div>
+    </div>
+</body>
+</html>
